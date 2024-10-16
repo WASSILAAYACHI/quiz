@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="splash-screen">
+        <img src="img/splash.png" alt="Splash Image">
+    </div>    
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Logo du site">
+        </div>
+        <h1>Safe O' Taff</h1>
+    </header>
+
+    <section class="description">
+        <h2>AGISSEZ, DENONCEZ, STOP AU HARCELEMENT SEXUEL !</h2>
+        <p>
+            Ici, nous nous engageons à sensibiliser et former les personnes au harcèlement sexuel dans un milieu professionnel. Notre mission est de créer un environnement sûr pour tous.
+        </p>
+    </section>
+
+    <section class="choices">
+        <div class="solo" onclick="showModal('solo')">
+            <h3>SOLO</h3>
+            <p>Formation individuelle.</p>
+        </div>
+        <div class="group" onclick="showModal('group')">
+            <h3>GROUPE</h3>
+            <p>Formation en groupe.</p>
+        </div>
+    </section>
+
+    <div class="modal" id="soloModal">
+        <div class="connexion-container">
+            <button class="close">&times;</button>
+            <h1>Connexion SOLO</h1>
+            <div class="input-container">
+                <label for="pseudoSolo">Pseudo:</label>
+                <input type="text" id="pseudoSolo" aria-label="Entrer votre pseudo">
+                <button onclick="redirectToJouer('solo')">Jouer</button>
+            </div>        
+        </div>
+    </div>
+</div>
+    
+    <!-- Modal for GROUPE -->
+    <div class="modal" id="groupModal">
+        <div class="connexion-container">
+            <button class="close">&times;</button>
+            <h1>Connexion GROUPE</h1>
+            <div class="input-container">
+                <label for="groupName">Nom du Groupe:</label>
+                <input type="text" id="groupName" aria-label="Entrer le nom du groupe">
+                <label for="groupSize">Nombre de joueurs:</label>
+                <input type="number" id="groupSize" aria-label="Entrer le nombre de joueurs">
+                <button onclick="redirectToJouer('group')">Jouer</button>
+            </div>        
+        </div>
+    </div>
+</div>
+<section class="key-elements">
+    <h2>Les éléments à la clé:</h2>
+    <p>Description d'un certificat de formations au harcèlement sexuel au travail</p>
+    <div class="places">
+        <div class="place">
+            <img src="img/medal.png" alt="Médaille">
+            <p>1ère place</p>
+        </div>
+        <div class="place">
+            <img src="img/medal.png" alt="Médaille">
+            <p>2ème place</p>
+        </div>
+        <div class="place">
+            <img src="img/medal.png" alt="Médaille">
+            <p>3ème place</p>
+        </div>
+        <div class="place">
+            <img src="img/medal.png" alt="Médaille">
+            <p>4ème place</p>
+        </div>
+    </div>
+
+
+
+
+</section>
+    <section class="sensibilisation">
+        <h2>Comprendre le harcèlement sexuel et l'agression sexuelle</h2>
+        <p>
+            Le harcèlement sexuel se réfère à des comportements non désirés d'ordre sexuel qui mettent mal à l'aise, menacent ou humilient une personne. Il peut s'agir de commentaires, de blagues, de gestes, d'images ou encore de pressions pour des faveurs sexuelles. L'agression sexuelle, quant à elle, est un acte sexuel non consensuel, qu'il soit commis par la force, la menace ou la ruse.
+        </p>
+        <p>
+            Contribuer à la sensibilisation est essentiel pour changer les mentalités et protéger les victimes potentielles.
+        </p>
+        <ul>
+            <li>Numéro d'urgence: 09 69 39 29 19 (7j/7 et 24h/24)</li>
+            <li><a href="https://eduscol.education.fr/2180/focus-prevention-des-violences-sexistes-et-sexuelles-l-ecole" aria-label="Ressource de sensibilisation">Lien vers une ressource de sensibilisation</a></li>
+            <li><a href="https://arretonslesviolences.gouv.fr/associations-de-lutte-contre-les-violences-sexistes-et-sexuelles" aria-label="Organisation d'aide">Lien vers une organisation d'aide</a></li>
+        </ul>
+        <iframe class="video-container" width="1500" height="700" src="https://www.youtube.com/embed/FSOrlBOZUGM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="Vidéo de sensibilisation"></iframe>
+    </section>
+
+    <div class="stats-section">
+        <h2>En chiffres</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="circle">
+                    <span>5</span>
+                </div>
+                <p>Nombre de pays des Caraïbes anglophones ayant des cadres juridiques en place qui ciblent le harcèlement sexuel au travail</p>
+            </div>
+            <div class="stat-item">
+                <div class="circle">
+                    <span>24%</span>
+                </div>
+                <p>Pourcentage de femmes signalant avoir déjà été victimes de harcèlement sexuel en Jamaïque</p>
+            </div>
+            <div class="stat-item">
+                <div class="circle">
+                    <span>20%</span>
+                </div>
+                <p>Pourcentage des femmes parlementaires interrogées par l’UIP ayant signalé avoir été victimes de harcèlement sexuel durant leur mandat législatif</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "eaf61796-84b1-43fa-a556-c9238c1d9ecf",
+            apiHost: "http://localhost:3000",
+            chatflowConfig: {
+                // topK: 2
+            },
+            theme: {
+                button: {
+                    backgroundColor: "#3B81F6",
+                    right: 20,
+                    bottom: 20,
+                    size: "medium",
+                    iconColor: "white",
+                    customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
+                },
+                chatWindow: {
+                    welcomeMessage: "Bonjour bienvenue sur Safe O' Taff, que puis-je faire pour vous ?",
+                    backgroundColor: "#ffffff",
+                    height: 700,
+                    width: 400,
+                    fontSize: 16,
+                    poweredByTextColor: "#303235",
+                    botMessage: {
+                        backgroundColor: "#f7f8ff",
+                        textColor: "#303235",
+                        showAvatar: true,
+                        avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                    },
+                    userMessage: {
+                        backgroundColor: "#3B81F6",
+                        textColor: "#ffffff",
+                        showAvatar: true,
+                        avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                    },
+                    textInput: {
+                        placeholder: "Type your question",
+                        backgroundColor: "#ffffff",
+                        textColor: "#303235",
+                        sendButtonColor: "#3B81F6",
+                    }
+                }
+            }
+        })
+    </script>
+    
+
+    <footer>
+        <p>© 2023 Votre entreprise. Tous droits réservés.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+
+</body>
+</html>
